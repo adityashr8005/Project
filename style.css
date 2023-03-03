@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url(istockphoto-168678735-170667a.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav {
+    background-color: rgb(18, 40, 29);
+    color: white;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+}
+
+nav ul {
+    font-size: 40px;
+    list-style-type: none;
+    font-family: sans-serif;
+}
+
+nav ul li {
+    text-align: center;
+}
+
+.gamecontainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    margin-bottom: 100px;
+    /*    padding: 20 300px;*/
+}
+
+.box {
+    border: 1px solid black;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.box:hover {
+    background-color: antiquewhite;
+    cursor: grab;
+}
+
+.box:clicked {
+    background-clip: url('mouse.mp3');
+}
+
+.info {
+    display: inline;
+    /*    padding: 20 20px;*/
+    font-family: cursive
+}
+
+.finfo {
+    display: flex;
+    font-size: 30px;
+    margin-left: 70px;
+}
+
+#reset {
+    margin-top: 20px;
+    margin-left: 70px;
+    width: 5rem;
+    height: 2rem;
+    font-weight: 900;
+    font-size: x-large;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    font-family: monospace;
+    background-color: antiquewhite;
+}
+
+.image {
+    width: 0;
+    transform: width 1s ease-in-out;
+}
+
+.bl-0 {
+    border-left: 0;
+}
+
+.br-0 {
+    border-right: 0;
+}
+
+.bt-0 {
+    border-top: 0;
+}
+
+.bb-0 {
+    border-bottom: 0;
+}

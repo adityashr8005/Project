@@ -1,0 +1,429 @@
+<html>
+
+<head>
+
+    <title>Learning Javascript...</title>
+
+</head>
+
+<body>
+
+    <script>
+        //		'Za81as@#1212'
+        //array method
+        //let ar = ["me ", "myself ", 420, "null ", null];
+        //console.log(ar.length);
+        //ar.pop();
+        // ar.push("myself");
+        // ar.push("prat");
+        // console.log(ar);
+        //string method in javascript
+
+        //        let mystring = "MY name is aaditya sharma";
+        // console.log(mystring.length);
+        //console.log(mystring.indexof("is"));
+        //console.log(mystring);
+
+        // console.log(mystring.slice(2, 6))
+        //        v=mystring.replace('aaditya','anthony');
+        //        console.log(v,mystring);
+        //        let mydate=new Date();
+        //        document.write(mydate);
+        //        document.write(mydate.getDay());
+        //        document.write(mydate.getHours());
+        //        document.write(mydate.getMinutes());
+        //        document.write(mydate.setFullYear(2022));
+
+
+
+
+
+        //		function sum(a=20,b=6){
+        //			return(a+b);
+        //		}
+        //		alert(sum(10,5));<---------yo value linxa excluding 20 and 6 mentioned above.
+
+        //		output=15 aauxa....
+
+
+
+
+        //		Templates|
+        //			for(let num=1; num<=10; num++){
+        //				let tableof=12;
+        //				console.log(` ${tableof} * ${num} = ${tableof*num} `);
+        //			}	
+        //		
+
+
+        //		Fat Arrow Function!!!
+        //		const mult = () => `Total multipliction will be ${(a=7)*(b=6)}`;
+        //		alert(mult());
+        //		console.log(mult());
+        //		
+        //		const mult = () => `total multiplicition will be ${(a=5)*(b=5)}`;
+        //		alert(mult());
+        //		
+
+        //		Array......
+        //		We use loop to navigate...
+        //		var myDost=['Me','vishal','shrajal','hem','salman'];
+        //		for(var i=0;i<myDost.length;i++){
+        //			document.write( `My friend name is ${myDost[i]}.<br>`);
+        //			console.log(myDost[i]);
+        //			alert(myDost[i]);
+        //		}
+        //		
+
+        //		For in loop and For of loop after ES6...
+        //		var myDost=['Me','vishal','shrajal','hem','salman'];
+        //		for(elements in myDost){
+        //			document.write(elements);
+        //		}
+        //		output:01234
+        //		
+        //		var myDost=['Me','vishal','shrajal','hem','salman'];
+        //		for(elements of myDost){
+        //			document.write(elements);
+        //		}
+        //		Output:Mevishalshrajalhemsalman
+
+
+        //	Array.prototype.forEach()
+        //		Array ..forEach function!!!
+        //		var myDost=['Me','vishal','shrajal','hem','salman'];
+        //		myDost.forEach(function(element, index, array){
+        //					   document.write(element + " index:" + index );
+        //			           console.log(element + " index:" + index)
+        //					   });	
+        //						OR,
+        //		myDost.forEach((element, index, array) ==> {
+        //					   document.write(element + " index:" + index );
+        //			           console.log(element + " index:" + index);
+        //					   });		
+        //Output:Me index:0
+        //	     vishal index:1
+        //	     shrajal index:2
+        //	     hem index:3
+        //	     salman index:4
+
+
+
+
+        //		Array Prototype!!!
+        //		var data=['hariram', 'kabir singh', 56, 'milkha singh', 420];
+        //		data.pop();
+        //		console.log(data);
+        //Output:hariram, kabir singh, 56, milkha singh					.pop() remove last element of array 
+        //		
+        //		var data=['hariram', 'kabir singh', 56, 'milkha singh', 420];
+        //		data.shift();
+        //		console.log(data);
+        //Output: kabir singh, 56, milkha singh, 420					.shift() remove first element of array 
+
+
+        //			
+        //		var data=['hariram', 'kabir singh', 56, 'milkha singh', 420];
+        //		data.unshift('raja', 765);
+        //		console.log(data);
+        //Output: raja, 765, hariram, kabir singh, 56, milkha singh, 420   .unshift() add element from first in element of array 
+
+
+
+
+
+
+
+
+        //		SPLICE --> The return value of splice method is number of deleted data.
+
+
+
+        //		UPDATE 'tue' TO 'Tue'..
+
+        //		const day=['sun','mon','tue','wed','thur','fri'];
+        //		
+        //		const newday=day.splice(2,1,'Tue');     2->INDEX NO.
+        //		console.log(day);						1->DELETED QUANTITY.
+        //		
+
+
+        //		IT IS NOT SUITABLE FOR EVERY CASES.WE CAN'T UPDATE A RANDOM DATA SO WE NEED TO USE A INDEXOF METHOD
+        //		TO UPDATE ANY INDEX DATA
+        //			const day=['sun','mon','tue','wed','thur','fri'];
+        //		const nday = day.indexOf('tue');
+        //		if(nday != -1){
+        //			const newday = day.splice(2,1,'Tue');
+        //			console.log(day);
+        //		}else{
+        //			console.log("data not found");
+        //  	}
+
+
+        //		DELETE 'tue" FROM THE ARRAY....
+        //			const day=['sun','mon','tue','wed','thur','fri'];
+        //		const nday = day.indexOf('tue');
+        //		if(nday != -1){
+        //			const newday = day.splice(2,1);    
+        //			console.log(day);
+        //		   console.log(newday);
+        //		newday after splice store a deleted data  (tue)and return the value as said above via console.log(newday);
+        //		}else{
+        //			console.log("data not found");
+        //		}
+        //
+
+        // const day = ['sun', 'mon', 'tue', 'wed', 'thur', 'fri'];
+        //  const nday = day.indexOf('tue');
+        //  if (nday != -1) {
+        //   const newday = day.splice(2, 1);
+        // console.log("The new collection of day is " + day);
+        // console.log("The deleted day is " + newday);
+        //		newday after splice store a deleted data  (tue)and return the value as said above via console.log(newday);
+        // } else {
+        //  console.log("data not found");
+        // } 
+
+
+        //Array .Push() method==>
+
+        <!-- const subj = ['sci', 'math', 'nep', 'social'];
+        var nsub = subj.push('opt math');
+        console.log(subj);
+        console.log(nsub);
+        -->
+    </script>
+
+
+
+
+
+
+
+
+    <!--		Using some extra HTML tag!!!-->
+    <!--
+//		<p><abbr title="Human">Rehan</abbr> is a boy.</p>
+//		<p><acronym title="Robot">Ruma</acronym> is a girl.</p>
+//-->
+
+
+
+    <!--
+//		<figure>
+//			<img src="gif-for-victory-boy-with-52650-161521.gif" title="example">
+//			<p>
+//			<figcaption>This is a wining gif</figcaption></p>
+//			
+//		</figure>
+//-->
+
+
+
+    <!--		Creating Table!!!-->
+    <!--
+		<table width="50" cellpadding="10" cellspacing="5" border="2">
+			<thead><h2>Exam Routine</h2></thead>
+		<tr>
+		    <th></th>
+			<th>sun</th>
+			<th>mon</th>
+			<th>tue</th>
+		</tr>
+		<tr>
+			<th>Exam</th>
+			<td>Physics</td>
+			<td>Chemistry</td>             
+			<td>Math</td>
+			
+		</tr>
+		<tr>
+			<th>Encharge</th>
+			<td colspan="2" bgcolor="grey">-----Amit sir-----</td>
+			-----It's takes a two column.....
+			<td>Harshit sir</td>
+		</tr>
+	    </table>
+-->
+    <!--//We use <thead>, <tbody>, <tfoot> for long table to divide the table in head, body and foot forms for easy working on table.-->
+
+
+
+
+
+    <!--	Adding text area...	-->
+    <!--
+		<p>
+			<textarea name="comment" cols="50" rows="15" placeholder="Enter your text"></textarea>
+		</p>
+-->
+
+
+    <!--		Uploading the song in www.example.com....-->
+    <!--
+		<form action="https://www.example.com/upload.php" method="post">
+<p>Upload your song in MP3 format:</p>
+<input type="file" name="user-song" /><br />
+<input type="submit" value="Upload" />
+		</form>
+		
+-->
+
+
+
+
+
+    <!--		Grouping form element with fieldset,,,,, also using legend element-->
+    <!--
+		<fieldset>
+<legend>Contact details</legend>
+<label>Email:<br />
+<input type="text" name="email" /></label><br />
+<label>Mobile:<br />
+<input type="text" name="mobile" /></label><br />
+<label>Telephone:<br />
+<input type="text" name="telephone" /></label>
+		</fieldset>
+-->
+
+
+
+
+
+    <!--	Form validation....	-->
+    <!--
+		<form action="http://www.example.com/login/"
+ method="post"> 
+<label for="username">Username:</label>
+<input type="text" name="username"
+ required="required" /><br /> 
+<label for="password">Password:</label>
+<input type="password" name="password"
+ required="required" /> 
+<input type="submit" value="Submit" />
+</form>
+		
+-->
+
+
+
+
+    <!--		Date input-->
+
+    <!--
+		
+		<form action="https://www.example.com/booking/" method="post">
+		<label for="username">Departure Date:</label> 
+		<input type="date" value="go" />
+		<input type="submit" value="submit" />
+		</form>
+
+		
+		
+-->
+
+
+
+
+
+    <!--		EXAMPLE OF THE COMPLETE FORM....-->
+
+?
+
+    <!--		&lt; --- it's display ' < ' this sign-->
+    <!--		&#60; ---it's display ' > ' this sign-->
+
+    <!--	&divide;	&#33; &#36,36,37,38 LIKE THIS THERE ARE MANY OTHER NUMBER CODE TO PRINT !  @  % LIKE THIS-->
+    <!-- Escape characters are used to include special characters in your pages such as <, >, @, ! and ©-->
+
+
+
+
+
+
+
+    <!--		Adding audio -->
+    <!--
+		<audio controls autoplay>
+ <source src="cheering.mp3.mp3" />
+ <source src="click.mp3" />
+ <p>This browser does not support our audio 
+ format.</p>
+ </audio>
+-->
+
+
+
+
+    <!--		Putting video -->
+    <!--
+		<video poster=" " width="400" 
+ height="320" controls="controls">
+ <source src="RRR%202022.mp4" type='video/mp4'/>
+
+		</video>
+-->
+    <!--
+ Flash allows you to add animations, video and audio to 
+ the web.
+		
+ Flash is not supported on iPhone or iPad.
+		
+ HTML5 introduces new <video> and <audio>
+ elements for adding video and audio to web pages, but 
+ these are only supported in the latest browsers.
+		
+ Browsers that support the HTML5 elements do not 
+ all support the same video and audio formats, so you 
+ need to supply your files in different formats to ensure 
+ that everyone can see/hear them.
+-->
+
+    <h1>Wait bro I am doing. </h1>
+
+    <!--
+		<div id="containera"><box></box></div>
+		
+		<div id="containerb"><box></box></div>
+		
+		
+		
+	</body>
+
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			background-image: url(istockphoto-168678735-170667a.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+		#containera{
+			display: inline-block;
+			height: 100%;
+			width: 50%;
+			background: rgb(63,132,66,0.5);
+			float: left;
+			position: relative;
+			
+		
+		}
+	
+		#containerb{
+			display: inline-block;
+			height: 100%;
+			width: 50%;
+			background: rgb(0,0,0,0.5);
+			float: right;
+			position: relative;
+			
+		}
+	
+	</style>
+-->
+
+</body>
+
+</html>
