@@ -1,0 +1,139 @@
+<html>
+
+<head>
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <nav>
+        <ul>
+
+            <li>Tic Tac Toe</li>
+        </ul>
+    </nav>
+    <div class="gamecontainer">
+    
+        <div class="container">
+             <div class="box bt-0 bl-0"><span class="btext"></span></div>
+             <div class="box bt-0 "><span class="btext"></span></div>
+             <div class="box bt-0 br-0"><span class="btext"></span></div>
+             <div class="box bl-0"><span class="btext"></span></div>
+              <div class="box"><span class="btext"></span></div>
+             <div class="box br-0"><span class="btext"></span></div>
+             <div class="box bb-0 bl-0"><span class="btext"></span></div>
+             <div class="box bb-0 "><span class="btext"></span></div>
+             <div class="box bb-0 br-0"><span class="btext"></span></div>
+        
+        </div>
+        
+        <div class="info">
+            <h1>Best Of Luck</h1>
+            <div>
+               <span class="finfo">Turn for X</span>
+              
+            </div>
+            <div class="image">
+<!--               <img src="winner-icegif-3.gif" >-->
+        </div>
+        <button id="reset">Reset</button>
+        </div>
+		
+<!--
+		<audio>
+		<source src="mouse.mp3"></audio>
+-->
+        
+        
+    </div>
+    <script>
+       
+        var winning = new Audio('cheering.mp3.mp3')
+        var audioturn = new Audio('mouse.mp3')
+        let turn="X"
+        let isgameover=false
+
+		
+//Function to change the turn
+const changeTurn = ()=>{
+    return turn==="X"?"O" : "X"
+}
+
+
+
+//Function to check for win
+const checkwin = ()=>{
+    let btext = document.getElementsByClassName('btext');
+    let wins=[
+        [0,1,2],
+        [3,4,5],
+        [6,7,8],
+        [0,3,6],
+        [1,4,7],
+        [2,5,8],
+        [0,4,8],
+        [2,4,6],
+    
+    ]
+    wins.forEach(e =>{
+        if((btext[e[0]].innerText === btext[e[1]].innerText) && (btext[e[2]].innerText === btext[e[1]].innerText)&&(btext[e[0]].innerText !== "")){
+           document.querySelector('.finfo').innerText = btext[e[0]].innerText + " won"
+           isgameover=true
+		   
+		   winning. play();
+//           document.querySelector('.imagebox').getElementsByClassName('image')[0].style.width = "5px"
+           }
+    })
+}
+
+
+//Game logic
+let boxes= document.getElementsByClassName("box");
+Array.from(boxes).forEach(element =>{
+    let btext = element.querySelector('.btext');
+    element.addEventListener('click',()=>{
+        if(btext.innerText===''){
+            btext.innerText = turn;
+            turn = changeTurn();
+			audioturn. play();
+			checkwin();
+            
+        if(!isgameover){
+             document.getElementsByClassName("finfo")[0].innerText="Turn for " + turn;
+			
+        }
+           
+            
+        }
+    })
+})
+		
+		
+//adding reset script
+        reset.addEventListener('click',()=>{
+            let btexts=document.querySelectorAll('.btext');
+            Array.from(btexts).forEach(element =>{
+                element.innerText = ""
+            });
+			if(winning. paused){
+				winning. pause();
+				
+			}
+			else{
+				winning. pause();
+				winning. currentTime = 0
+			 }
+			
+            turn="X"
+            isgameover=false
+            document.getElementsByClassName("finfo")[0].innerText = "Turn for " + turn;
+			audioturn. play();
+			
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="eng">
+
+
+
+<body>
+    <h2>Message by ...</h2>
+    <div id="container">
+        <fieldset id="intro">
+            <legend>Message</legend>
+            <p> <label>Do you know me?</label><br><br>
+                <input type="button" value="Yes" id="btn1" onclick="btn1()">
+                <input type="button" value="No" id="btn2" onclick="btn2()">
+            </p>
+        </fieldset>
+
+        <fieldset id="quest">
+            <legend>Message</legend>
+            <p> <label>You want to participate?</label><br><br>
+                <input type="button" value="Yes" id="btn3" onclick="btn3()">
+                <input type="button" value="No" id="btn4" onclick="btn4()">
+            </p>
+        </fieldset>
+    </div>
+
+</body>
+<script>
+    function btn1() {
+        if (document.getElementById('btn1').click) {
+            document.write("Nice to hear that You know me");
+            a = document.getElementById('quest').value;
+            document.writeln(a);
+        }
+    }
+
+    function btn2() {
+        alert("Well My name is Aaditya");
+        quest();
+    }
+
+    console.log("loading...");
+</script>
+
+</html>
