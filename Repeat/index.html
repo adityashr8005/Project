@@ -17,8 +17,8 @@
 
         <fieldset id="quest">
             <legend>Message</legend>
-            <p> <label>You want to participate?</label><br><br>
-                <input type="button" value="Yes" id="btn3" onclick="btn3()">
+            <p> <label>You want to participate in survey?</label><br><br>
+                <a href="http://127.0.0.1:5555/Repeat/new.html"><button type="submit">Yes</button></a>
                 <input type="button" value="No" id="btn4" onclick="btn4()">
             </p>
         </fieldset>
@@ -28,16 +28,27 @@
 <script>
     function btn1() {
         if (document.getElementById('btn1').click) {
-            document.write("Nice to hear that You know me");
-            a = document.getElementById('quest').value;
-            document.writeln(a);
+            alert("Nice to hear that You know me");
+
         }
     }
 
     function btn2() {
         alert("Well My name is Aaditya");
-        quest();
+
     }
+
+    function btn3() {
+
+
+    }
+
+    function btn4() {
+        alert("Chup chap participate kar");
+
+    }
+
+
 
     console.log("loading...");
 </script>
