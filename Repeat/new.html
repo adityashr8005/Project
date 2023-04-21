@@ -3,43 +3,50 @@
 
 <body>
     <div class="field">
-        <fieldset>
-            <legend>Survey</legend> <br>
-            <label>What is your Nationality?</label><br>
-            <select name="Nationality" id="Nat">
+        <form action="https://www.example.com/upload.html" method="post">
+            <fieldset>
+                <legend>Survey</legend> <br>
+
+                <label>What is your FullName?</label><br>
+                <input type="text" placeholder="Name">
+                <br> <br>
+
+                <label>What is your Nationality?</label><br>
+                <select name="Nationality" id="Nat">
                     <option>Nepali</option>
                     <option>Indian</option>
                     <option>Others</option>
                     <option>None</option>
                 </select>
-            <br> <br>
+                <br> <br>
 
-            <label>What is your educational status?</label><br>
-            <select name="Nationality" id="Nat">
+                <label>What is your educational status?</label><br>
+                <select name="education" id="edu">
                         <option>Schooling</option>
                         <option>Collages</option>
-                        <option>Bachler/Master</option>
+                        <option>Bachelor/Master</option>
                         <option>Others</option>
                     </select>
-            <br> <br>
+                <br> <br>
 
-            <label>What is your favourite browser?</label><br>
-            <select name="Nationality" id="Nat">
+                <label>What is your favorite browser?</label><br>
+                <select name="browser" id="browser">
                         <option>Yahoo</option>
                         <option>Google</option>
                         <option>Firefox</option>
                         <option>Others</option>
                     </select>
-            <br> <br>
+                <br> <br>
 
-            <label>Write something about your info?</label><br> <br>
-            <textarea placeholder="Write without any shy!!!"></textarea>
-            <br> <br>
-            <button type="submit" onclick="Submit()">Submit</button>
+                <label>Write something about your info?</label><br> <br>
+                <textarea placeholder="Write without any shy!!!"></textarea>
+                <br> <br>
+                <a href="http://127.0.0.1:5555/Repeat/index.html"><button type="submit" onclick="Submit()">Submit</button> </a>
 
 
 
-        </fieldset>
+            </fieldset>
+        </form>
     </div>
     <script>
         function Submit() {
