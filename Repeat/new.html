@@ -2,55 +2,109 @@
 <html>
 
 <body>
-    <div class="field">
-        <form action="https://www.example.com/upload.html" method="post">
-            <fieldset>
-                <legend>Survey</legend> <br>
 
-                <label>What is your FullName?</label><br>
-                <input type="text" placeholder="Name">
+    <div class="field">
+
+        <fieldset>
+            <legend>Survey</legend> <br>
+            <form onsubmit="event.preventDefault();" autocomplete="off">
+                <div>
+                    <label>What is your FullName?</label><br>
+                    <input type="text" placeholder="Name" id="name">
+                </div>
                 <br> <br>
 
-                <label>What is your Nationality?</label><br>
-                <select name="Nationality" id="Nat">
-                    <option>Nepali</option>
-                    <option>Indian</option>
-                    <option>Others</option>
-                    <option>None</option>
-                </select>
+                <div>
+                    <label>What is your Nationality?</label><br>
+                    <input type="text" name="Nation" id="Nat">
+                </div>
                 <br> <br>
 
                 <label>What is your educational status?</label><br>
-                <select name="education" id="edu">
-                        <option>Schooling</option>
-                        <option>Collages</option>
-                        <option>Bachelor/Master</option>
-                        <option>Others</option>
-                    </select>
+                <input type="text" name="Education" id="edu">
                 <br> <br>
 
                 <label>What is your favorite browser?</label><br>
-                <select name="browser" id="browser">
-                        <option>Yahoo</option>
-                        <option>Google</option>
-                        <option>Firefox</option>
-                        <option>Others</option>
-                    </select>
+                <input type="text" name="browser" id="browser">
                 <br> <br>
 
                 <label>Write something about your info?</label><br> <br>
-                <textarea placeholder="Write without any shy!!!"></textarea>
+                <textarea placeholder="Write without any shy!!!" id="txtarea"></textarea>
                 <br> <br>
-                <a href="http://127.0.0.1:5555/Repeat/index.html"><button type="submit" onclick="Submit()">Submit</button> </a>
+                <input type="button" value="submit" id="btn" onclick="Onsubmit()">
+            </form>
 
 
 
-            </fieldset>
-        </form>
+
+        </fieldset>
+        <td>
+            <table border="1px" id="Tinfo">
+
+                <thead>
+                    <tr>
+                        <th>Fullname</th>
+                        <th>Nationality</th>
+                        <th>Education</th>
+                        <th>Fav. Browser</th>
+                        <th>Info</th>
+                        <th> </th>
+
+                    </tr>
+                </thead>
+
+            </table>
+        </td>
     </div>
     <script>
-        function Submit() {
-            document.write("Thank you for your time...")
+        var list1 = [];
+        var list2 = [];
+        var list3 = [];
+        var list4 = [];
+        var list5 = [];
+
+        var n = 1;
+        var x = 0;
+
+        function Onsubmit() {
+
+            console.log("Derivatives fn...");
+            var table = document.getElementById("Tinfo");
+            var newRow = table.insertRow(n);
+
+
+            list1[x] = document.getElementById("name").value;
+            list2[x] = document.getElementById("Nat").value;
+            list3[x] = document.getElementById("edu").value;
+            list4[x] = document.getElementById("browser").value;
+            list5[x] = document.getElementById("txtarea").value;
+
+            cell1 = newRow.insertCell(0);
+            cell1.innerHTML = list1[x];
+
+            cell2 = newRow.insertCell(1);
+            cell2.innerHTML = list2[x];
+
+            cell3 = newRow.insertCell(2);
+            cell3.innerHTML = list3[x];
+
+            cell4 = newRow.insertCell(3);
+            cell4.innerHTML = list4[x];
+
+            cell5 = newRow.insertCell(4);
+            cell5.innerHTML = list5[x];
+
+            cell6 = newRow.insertCell(5);
+            cell6.innerHTML = `<a>Update</a>
+                               <a onclick="del(this)">Delete</a>`;
+
+            n++;
+            x++;
+
+            function del(td) {
+                row = td.parentElement.parentElement;
+                document.getElementById("Tinfo").deleteRow(row.rowIndex);
+            }
         }
     </script>
 </body>
