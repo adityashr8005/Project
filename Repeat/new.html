@@ -2,59 +2,72 @@
 <html>
 
 <body>
-
+    <link rel="stylesheet" href="style.css">
+    <div>
+        <marquee behavior="" direction="left">Please don't fill the empty form.The filled up data will be given in a below table.....</marquee>
+    </div>
     <div class="field">
 
-        <fieldset>
-            <legend>Survey</legend> <br>
+        <fieldset id="field">
+            <legend>
+                <h2>Entry Data</h2>
+            </legend> <br>
             <form onsubmit="event.preventDefault();" autocomplete="off">
                 <div>
-                    <label>What is your FullName?</label><br>
-                    <input type="text" placeholder="Name" id="name">
+                    <label><b>What is your FullName?</b></label><br>
+                    <input type="text" placeholder="Name" id="name" required="required">
                 </div>
                 <br> <br>
 
                 <div>
-                    <label>What is your Nationality?</label><br>
-                    <input type="text" name="Nation" id="Nat">
+                    <label><b>What is your Nationality?</b></label><br>
+                    <input type="text" name="Nation" id="Nat" required="required">
                 </div>
                 <br> <br>
 
-                <label>What is your educational status?</label><br>
-                <input type="text" name="Education" id="edu">
+                <label><b>What is your educational status?</b></label><br>
+                <input type="text" name="Education" id="edu" required="required">
                 <br> <br>
 
-                <label>What is your favorite browser?</label><br>
-                <input type="text" name="browser" id="browser">
+                <label><b>What is your favorite browser?</b></label><br>
+                <input type="text" name="browser" id="browser" required="required">
                 <br> <br>
 
-                <label>Write something about your info?</label><br> <br>
-                <textarea placeholder="Write without any shy!!!" id="txtarea"></textarea>
+                <label><b>Write something about your Intrest?</b></label><br> <br>
+                <textarea placeholder="Write without any shy!!!" id="txtarea" required="required"></textarea>
                 <br> <br>
-                <input type="button" value="submit" id="btn" onclick="Onsubmit()">
+                <input type="button" value="Submit" id="btn" onclick="Onsubmit()">
             </form>
 
 
 
 
         </fieldset>
-        <td>
-            <table border="1px" id="Tinfo">
 
-                <thead>
-                    <tr>
-                        <th>Fullname</th>
-                        <th>Nationality</th>
-                        <th>Education</th>
-                        <th>Fav. Browser</th>
-                        <th>Info</th>
-                        <th> </th>
 
-                    </tr>
-                </thead>
 
-            </table>
-        </td>
+        <fieldset id="sfield">
+            <legend>
+                <h3>Collection Of Data</h3>
+            </legend>
+            <td>
+                <table border="1px" id="Tinfo">
+
+                    <thead>
+                        <tr>
+                            <th>Fullname</th>
+                            <th>Nationality</th>
+                            <th>Education</th>
+                            <th>Fav. Browser</th>
+                            <th>Intrest</th>
+                            <th>Edit</th>
+
+                        </tr>
+                    </thead>
+
+                </table>
+            </td>
+        </fieldset>
     </div>
     <script>
         var list1 = [];
@@ -82,29 +95,64 @@
             cell1 = newRow.insertCell(0);
             cell1.innerHTML = list1[x];
 
+            localStorage.setItem("name", list1[x]);
+            localStorage.getItem(list1[x]);
+
             cell2 = newRow.insertCell(1);
             cell2.innerHTML = list2[x];
+
+            localStorage.setItem("Nat", list2[x]);
+            localStorage.getItem(list2[x]);
 
             cell3 = newRow.insertCell(2);
             cell3.innerHTML = list3[x];
 
+            localStorage.setItem("edu", list3[x]);
+            localStorage.getItem(list3[x]);
+
             cell4 = newRow.insertCell(3);
             cell4.innerHTML = list4[x];
+
+            localStorage.setItem("browser", list4[x]);
+            localStorage.getItem(list4[x]);
 
             cell5 = newRow.insertCell(4);
             cell5.innerHTML = list5[x];
 
+            localStorage.setItem("name", list5[x]);
+            localStorage.getItem(list5[x]);
+
             cell6 = newRow.insertCell(5);
-            cell6.innerHTML = `<a>Update</a>
-                               <a onclick="del(this)">Delete</a>`;
+            cell6.innerHTML = `<button id="Update">Update</button>
+                               <button id="del" onclick="del(this)">Delete</button>`;
 
             n++;
             x++;
 
-            function del(td) {
-                row = td.parentElement.parentElement;
-                document.getElementById("Tinfo").deleteRow(row.rowIndex);
+            for (i = 0; i < localStorage.length; i++) {
+
+
+
             }
+            resetForm();
+
+        }
+
+        function resetForm() {
+            document.getElementById("name").value = "";
+            document.getElementById("Nat").value = "";
+            document.getElementById("edu").value = "";
+            document.getElementById("browser").value = "";
+            document.getElementById("txtarea").value = "";
+
+
+        }
+
+        function del(td) {
+            row = td.parentElement.parentElement;
+            document.getElementById("Tinfo").deleteRow(row.rowIndex);
+            location.reload();
+            resetForm();
         }
     </script>
 </body>

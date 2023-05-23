@@ -1,0 +1,76 @@
+*main {
+    margin: 0%;
+    padding: 0%;
+}
+
+#Tinfo {
+    width: 100%;
+    height: max-content;
+    margin-bottom: 30px;
+    background-color: black;
+    color: white;
+}
+
+marquee {
+    color: white;
+}
+
+body {
+    background-image: url(Image/Untitled\ design.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#name {
+    border-radius: 7px;
+    border-color: #00ff18;
+    cursor: pointer;
+}
+
+#Nat {
+    border-radius: 7px;
+    border-color: #00ff18;
+    cursor: pointer;
+}
+
+#edu {
+    border-radius: 7px;
+    border-color: #00ff18;
+    cursor: pointer;
+}
+
+#browser {
+    border-radius: 7px;
+    border-color: #00ff18;
+    cursor: pointer;
+}
+
+#txtarea {
+    border-radius: 7px;
+    border-color: #00ff18;
+    cursor: pointer;
+}
+
+#btn {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    height: 4vh;
+    width: 6vw;
+    color: aliceblue;
+    cursor: grab;
+}
+
+#Update {
+    color: aliceblue;
+    background-color: blue;
+    width: 6vw;
+}
+
+#del {
+    position: relative;
+    margin-inline: 2vw;
+    padding: 0.2vw;
+    width: 6vw;
+    color: aliceblue;
+    background-color: red;
+}

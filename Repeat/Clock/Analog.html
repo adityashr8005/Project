@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        .id {
+            position: absolute;
+        }
+        
+        #box {
+            color: red;
+            border-radius: 50%;
+        }
+        
+        #time {
+            position: absolute;
+            left: 314px;
+            top: 1px;
+        }
+        
+        #atime {
+            position: absolute;
+            left: 612px;
+            top: 300px;
+        }
+        
+        #btime {
+            position: absolute;
+            left: 310px;
+            top: 594px;
+        }
+        
+        #ctime {
+            position: absolute;
+            left: 10px;
+            top: 300px;
+        }
+        
+        #center {
+            position: absolute;
+            top: 300px;
+            left: 325px
+        }
+        
+        #hour {
+            background-color: green;
+            height: 116px;
+            width: 1px;
+            position: absolute;
+            top: 175px;
+            left: 304px;
+            transform-origin: bottom;
+        }
+        
+        #minutes {
+            background-color: green;
+            height: 167px;
+            width: 1px;
+            position: absolute;
+            top: 126px;
+            left: 309px;
+            transform-origin: bottom;
+        }
+        
+        #seconds {
+            background-color: rgb(249, 255, 249);
+            height: 244px;
+            width: 1px;
+            position: absolute;
+            top: 45px;
+            left: 304px;
+            transform-origin: bottom;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="id">
+        <fieldset id="box" style="height: 600px; width: 600px; background-color:black;">
+            <legend id="time">12</legend>
+            <legend id="atime">3</legend>
+            <legend id="btime">6</legend>
+            <legend id="ctime">9</legend>
+            <legend id="center"><b>.</b></legend>
+            <div class="hour">
+                <fieldset id="hour">
+                    <legend id="hr"></legend>
+                </fieldset>
+            </div>
+            <div class="minutes">
+                <fieldset id="minutes">
+                    <legend id="min"></legend>
+                </fieldset>
+            </div>
+            <div class="seconds">
+                <fieldset id="seconds">
+                    <legend id="sec"></legend>
+                </fieldset>
+            </div>
+        </fieldset>
+        <script>
+            setInterval(() => {
+                var time = new Date();
+                var htime = new Date().getHours();
+                var mtime = new Date().getMinutes();
+                var stime = new Date().getSeconds();
+
+                console.log(time);
+                console.log(htime);
+                console.log(mtime);
+                console.log(stime);
+
+                h = 30 * htime + mtime / 2;
+                m = 6 * mtime;
+                s = 6 * stime;
+
+
+                hour = document.getElementById("hour");
+                minute = document.getElementById("minutes");
+                second = document.getElementById("seconds");
+
+
+
+                hour.style.transform = `rotate(${h}deg)`;
+                minute.style.transform = `rotate(${m}deg)`;
+                second.style.transform = `rotate(${s}deg)`;
+
+
+            }, 1000);
+        </script>
+    </div>
+
+
+</body>
+
+</html>
